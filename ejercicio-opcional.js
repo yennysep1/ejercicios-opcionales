@@ -10,7 +10,7 @@ function numeroMenor(a,b,c){
 
 }
 
-/* #2 Escribir el codigo de na funcion a la que se pasa como parametro un numero entero 
+/* #2 Escribir el codigo de una funcion a la que se pasa como parametro un numero entero 
 y devuelve como resultado un cadena de texto que indica si el numero es par o impar 
 mostrar por pantalla el resultado devuelto por la funcion*/
 
@@ -29,7 +29,14 @@ function esPar (n){
 /* #3 Realizar una función a la cual le envie tres enteros y los muestre ordenados
 de menor  a mayor */
 
- 
+function menorMayor (num1,num2,num3){
+
+var num = [num1,num2,num3];
+var ordenados = num.sort(function (a,b) {
+    return a - b;
+});
+ 	console.log(ordenados);
+} 
 
 
 /* #4 Definir una función que muestre información sobre una cadena de texto  
@@ -56,6 +63,7 @@ function minusculaMayuscula (cadena){
 
 
 
+
 // #7 Realizar un programa que calcule el cuadrado de la suma de dos numeros
 
 function sumaCuadrado (a,b){
@@ -77,23 +85,61 @@ function esPrimo(){
 	} else if (n===2){
 		alert("Es número primo ");
 	
-	} else if (n>3){
+	} else if (n>=3){
+		var esPrimo = true; // asume que es un primo
 
-		for (i=2; i<n-1; i++){
+		for (i=2; i<n-1; i++){  // tratando de encontrar un divisor, se rompe la regla
 			if(n%i===0){
-		 		alert("no es primo");	
-			}else {
-				alert("es primo ");
+		 		esPrimo = false;
+		 		break;
 			}
 		}
-	}
 
-} esPrimo();
+		if(esPrimo) {
+			alert("es primo");
+		} else {
+			alert("no es primo")
+		}
+	}
+}
+
+esPrimo();
 
 
 /* #9 programa que calcula los 10 primeros multiplos del numero que queramos, 
 utilizando una funcion que retorna parametro*/
 
 
+function multiplosDe(num){
+	var num=parseInt(prompt("¿Múltiplos de qué número?",""));
+	var resultado="";
+	var multiplo;
+
+
+	for(i=1;i<=10;i++){
+		multiplo=num*i;
+		resultado+= multiplo +",";  //caja que almacena el recorrido de for
+		
+	}
+	return alert(resultado);
+
+} multiplosDe();
+
+
+// ARRAY
+// ARRAY
+// ARRAY
+
+
+/* #10 Desarrollar una función que retorne la cantidad de digitos que tiene 
+una variable entera positiva*/
+
+function cantElementos(){
+	var arreglo = ["Dará", "el", "largo", "de", "esta", "variable", 5, 6];
+	var largo = arreglo.length;
+
+	return largo;
+
+} cantElementos();
 
 
